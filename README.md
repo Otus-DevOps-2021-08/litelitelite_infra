@@ -26,3 +26,5 @@ Host someinternalhost
 ```
 ssh someinternalhost
 ```
+bastion_IP = 193.32.218.51
+someinternalhost_IP = 10.128.0.15
