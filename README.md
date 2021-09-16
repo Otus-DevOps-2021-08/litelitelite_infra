@@ -1,21 +1,28 @@
 # litelitelite_infra
 litelitelite Infra repository
 
-Решение основного и дополнительного задания по bastion
+### Дополнительное задание №1:
+>Предложить вариант решения для подключения из консоли при помощи команды вида ssh someinternalhost из локальной консоли рабочего устройства, чтобы подключение выполнялось по алиасу someinternalhost и внести его в README.md в вашем репозитории
+- Добавлен config:
 
-Необходимо изменить конфиг ssh в такой вид:
+```
 Host bastion
-  Hostname <внешний IP бастиона>
+  Hostname 193.32.218.51
   User appuser
   IdentityFile /root/.ssh/appuser
   ControlPath ~/.ssh/cm-%r@%h:%p
   ControlMaster auto
   ControlPersist 1m
+
 Host someinternalhost
-  Hostname <внутренний IP>
+  Hostname 10.128.0.15
   User appuser
   ProxyCommand ssh -W %h:%p bastion
   IdentityFile /root/.ssh/appuser
+```
 
-bastion_IP = 62.84.115.157
-someinternalhost_IP = 10.128.0.15
+- Команда для подключения к хосту за бастионом через alias:
+
+```
+ssh someinternalhost
+```
