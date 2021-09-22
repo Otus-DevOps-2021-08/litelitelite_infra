@@ -1,5 +1,5 @@
 {
-  "token": "lolkekchebureck",
+  "service_account_key_file": "yc-iam-key.json.example",
   "folder_id": "folder-id-from-yc",
   "image_name": "image-name"
 }
