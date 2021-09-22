@@ -1,0 +1,5 @@
+{
+  "service_account_key_file": "path-to-key",
+  "folder_id": "folder-id-from-yc",
+  "image_name": "image-name"
+}
