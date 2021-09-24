@@ -1,29 +1,13 @@
 # litelitelite_infra
 litelitelite Infra repository
 
-- Cloud_test_app
+## Выполнено ДЗ №5
 
-```
-testapp_IP = 178.154.202.231
-```
-```
-testapp_port = 9292
-```
+- Установлен Packer
+- Подготовлен образ ВМ с установленными MongoDB, Ruby
+- Пробный запуск образа в YC
+- Выполнена параметризация шаблона packer
 
-- Установка MongoDB
+## Запуск сборки образа
 
-```
-install_mongodb.sh
-```
-
-- Установка Ruby
-
-```
-install_ruby.sh
-```
-
-- Запуск сервиса
-
-```
-deploy.sh
-```
+packer build -var-file=variables.json ./ubuntu16.json
