@@ -1,0 +1,5 @@
+{
+  "service_account_key_file": "/root/key.json",
+  "folder_id": "b1grgo0gscpubngll5fu",
+  "image_name": "reddit-db-base-{{timestamp}}"
+}

@@ -1,0 +1,29 @@
+{
+    "builders": [
+        {
+            "type": "yandex",
+            "service_account_key_file": "{{ user `service_account_key_file` }}",
+            "folder_id": "{{ user `folder_id` }}",
+            "image_name": "{{ user `image_name` }}",
+            "source_image_family": "ubuntu-1604-lts",
+            "image_family": "reddit-base",
+            "ssh_username": "ubuntu",
+            "platform_id": "standard-v1",
+            "subnet_id": "e9bh90pgjklenms4sl7l",
+            "use_ipv4_nat": true
+        }
+    ],
+    "provisioners": [
+        {   "type": "shell",
+            "inline": [ "sudo apt-get update",
+                         "sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -yq"
+                ],
+            "pause_before": "2s"
+        },
+        {
+            "type": "shell",
+            "scripts": ["scripts/install_mongodb.sh"],
+            "execute_command": "sudo DEBIAN_FRONTEND=noninteractive {{ .Path }}"
+        }
+    ]
+}
