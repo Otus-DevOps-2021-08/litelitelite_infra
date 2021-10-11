@@ -18,7 +18,8 @@
             "inline": [ "sudo apt-get update",
                          "sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -yq"
                 ],
-            "pause_before": "2s"
+            "pause_before": "2s",
+            "max_retries": 30
         },
         {
             "type": "shell",
