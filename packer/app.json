@@ -14,17 +14,10 @@
         }
     ],
     "provisioners": [
-        {   "type": "shell",
-            "inline": [ "sudo apt-get update",
-                         "sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -yq"
-                ],
-            "pause_before": "2s",
-            "max_retries": 30
-        },
         {
-            "type": "shell",
-            "scripts": ["scripts/install_ruby.sh"],
-            "execute_command": "sudo DEBIAN_FRONTEND=noninteractive {{ .Path }}"
+            "type": "ansible",
+            "playbook_file": "ansible/packer_app.yml"
+
         }
     ]
 }
